@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* Este código es del SwipeActions del componente ExpenseDetail.tsx. Básicamente es lo que le dá los estilos a esos componentes cuando deslicemos para editar o eliminar un gasto */
+
+/* Utiliza @apply y básicamente lo que hacemos es leer las clases que tiene esa librería, lo estuve inspeccionando, encontré las clases que los modifican y utilizo @apply para aplicarle entonces clases de tailwind, de esa forma incorporo los colores, las clases de tailwind a una librería que estoy tomando de npm  */
+
 /*** SWIPE LIST OVERRIDES **/
 .swipeable-list-item__leading-actions, 
 .swipeable-list-item__trailing-actions {

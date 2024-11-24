@@ -2,12 +2,14 @@ import { ChangeEvent } from "react";
 import { categories } from "../data/categories";
 import { useBudget } from "../hooks/useBudget";
 
+// Este componente va a filtrar los gastos por categoría
+
 export default function FilterByCategory() {
 
-    const { dispatch } = useBudget()
+    const { dispatch } = useBudget() // Extraemos el dispatch porque vamos a escribir en el state
 
     const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
-        dispatch({type: 'add-filter-category', payload: {id: e.target.value}})
+        dispatch({type: 'add-filter-category', payload: {id: e.target.value}}) // El payload va a ser el id porque le estamos pasando el value como id en el option
     }
 
     return (
@@ -21,9 +23,9 @@ export default function FilterByCategory() {
                         onChange={handleChange}
                     >
                         <option value="">-- Todas las Categorias</option>
-                        {categories.map(category => (
+                        {categories.map(category => ( // Iteramos las categorías y retornamos una opción por cada una de ellas
                             <option 
-                                value={category.id}
+                                value={category.id} // Eso es lo que colocamos en el state
                                 key={category.id}
                             >
                                 {category.name}
